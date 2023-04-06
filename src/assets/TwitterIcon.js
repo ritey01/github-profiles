@@ -7,6 +7,7 @@ function TwitterIcon({ twitter }) {
   const theme = useTheme();
 
   useEffect(() => {
+    //If user has a twitter set color to theme else set color to #697C9A
     twitter ? setColor(theme.text) : setColor("#697C9A");
   }, [twitter, theme.text]);
   return (

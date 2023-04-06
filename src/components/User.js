@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import theme from "../themes/theme";
 import { formatDate } from "../utils/dateFormat";
+import LinkIcon from "../assets/LinkIcon";
+import LocationIcon from "../assets/LocationIcon";
+import TwitterIcon from "../assets/TwitterIcon";
+import CompanyIcon from "../assets/CompanyIcon";
 
 const Card = styled.div`
   background-color: ${(props) => props.theme.cardBg};
@@ -102,6 +106,25 @@ const StyledInfo = styled.p`
   font-weight: 1.2rem;
   color: ${(props) => props.theme.title};
 `;
+const SocialMedia = styled.div`
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  @media (min-width: 1440px) {
+    margin-left: 6rem;
+  }
+`;
+
+const StyledDetails = styled.div`
+  display: flex;
+  margin-top: 1rem;
+`;
+const Details = styled.p`
+  margin: 0 0 0 1rem;
+  font-size: 0.9rem;
+  color: ${(props) => props.color || props.theme.text};
+`;
 
 const User = ({ user }) => {
   return (
@@ -139,6 +162,42 @@ const User = ({ user }) => {
           <FollowersText>Following</FollowersText> {user.following}
         </StyledInfo>
       </FollowersCard>
+      <SocialMedia>
+        <StyledDetails>
+          <LocationIcon location={user.location} />
+          {user.location !== null ? (
+            <Details> {user.location}</Details>
+          ) : (
+            <Details color={theme.LMColors.grey}>No location available</Details>
+          )}
+        </StyledDetails>
+        <StyledDetails>
+          <LinkIcon blog={user.blog} />
+
+          {user.blog !== "" ? (
+            <Details> {user.blog}</Details>
+          ) : (
+            <Details color={theme.LMColors.grey}>No blog available</Details>
+          )}
+        </StyledDetails>
+
+        <StyledDetails>
+          <TwitterIcon twitter={user.twitter_username} />
+          {user.twitter_username !== null ? (
+            <Details> {user.twitter_username}</Details>
+          ) : (
+            <Details color={theme.LMColors.grey}>Not available</Details>
+          )}
+        </StyledDetails>
+        <StyledDetails>
+          <CompanyIcon company={user.company} />
+          {user.company !== null ? (
+            <Details> {user.company}</Details>
+          ) : (
+            <Details color={theme.LMColors.grey}>Company not available</Details>
+          )}
+        </StyledDetails>
+      </SocialMedia>
     </Card>
   );
 };
