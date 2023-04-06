@@ -4,6 +4,7 @@ import User from "./User";
 const UserPage = () => {
   const [isNotFound, setIsNotFound] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [user, setUser] = useState([]);
   const searchField = "ritey01";
   useEffect(() => {
     const fetchUser = async () => {
@@ -16,8 +17,7 @@ const UserPage = () => {
         return;
       }
       const userData = await response.json();
-      console.log(userData);
-
+      setUser(userData);
       setIsLoading(false);
     };
     fetchUser();
@@ -36,7 +36,7 @@ const UserPage = () => {
   }
   return (
     <>
-      <User />
+      <User user={user} />
     </>
   );
 };
