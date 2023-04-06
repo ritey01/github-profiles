@@ -37,9 +37,9 @@ const UserPage = () => {
       setRepos(reposData);
       setIsLoading(false);
     };
-    fetchRepos();
 
     fetchUser();
+    fetchRepos();
   }, []);
 
   if (isNotFound) {
@@ -55,7 +55,7 @@ const UserPage = () => {
   }
   return (
     <>
-      <User user={user} />
+      <User user={user} repos={repos} />
     </>
   );
 };

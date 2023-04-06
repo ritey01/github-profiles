@@ -15,7 +15,7 @@ const StyledHeader = styled.header`
   }
 `;
 const StyledH1 = styled.h1`
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: ${(props) => props.theme.title};
 `;
@@ -23,7 +23,7 @@ const StyledH1 = styled.h1`
 const Mode = styled.button`
   color: ${(props) => props.theme.text};
   font-weight: 700;
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   margin-right: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.2rem;

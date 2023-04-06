@@ -122,11 +122,36 @@ const StyledDetails = styled.div`
 `;
 const Details = styled.p`
   margin: 0 0 0 1rem;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: ${(props) => props.color || props.theme.text};
 `;
 
-const User = ({ user }) => {
+const TopRepos = styled.div`
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  @media (min-width: 1440px) {
+    margin-left: 6rem;
+  }
+`;
+
+const RepoTitle = styled.h3`
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: ${(props) => props.theme.title};
+`;
+
+const RepoList = styled.ul`
+  list-style-type: none;
+`;
+const RepoCard = styled.li`
+  color: ${(props) => props.color || props.theme.text};
+  font-size: 0.8rem;
+`;
+
+const User = ({ user, repos }) => {
+  const top4Repos = repos.slice(0, 4);
   return (
     <Card>
       <StyledUserHeader>
@@ -134,7 +159,10 @@ const User = ({ user }) => {
 
         <UserDetails>
           {user.name === null ? (
-            <UserName>{user.login}</UserName>
+            <>
+              {/* {alert("No user name found")} */}
+              <UserName>{user.login}</UserName>
+            </>
           ) : (
             <UserName>{user.name}</UserName>
           )}
@@ -198,6 +226,18 @@ const User = ({ user }) => {
           )}
         </StyledDetails>
       </SocialMedia>
+      <TopRepos>
+        <RepoTitle>Top Repos</RepoTitle>
+        {top4Repos ? (
+          top4Repos.map((repo) => (
+            <RepoList>
+              <RepoCard>{repo.name}</RepoCard>
+            </RepoList>
+          ))
+        ) : (
+          <p>No repos available</p>
+        )}
+      </TopRepos>
     </Card>
   );
 };
