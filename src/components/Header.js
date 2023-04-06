@@ -3,6 +3,17 @@ import styled from "styled-components";
 import moonIcon from "../assets/icons8-moon-symbol-30.png";
 import sunIcon from "../assets/icons8-sun-24.png";
 
+const StyledHeader = styled.header`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.8rem auto 0 auto;
+  max-width: 573px;
+  width: 95%;
+  @media (min-width: 1440px) {
+    max-width: 730px;
+  }
+`;
 const StyledH1 = styled.h1`
   font-size: 1.5rem;
   font-weight: 700;
@@ -31,7 +42,7 @@ const Header = ({ setTheme, isDarkTheme }) => {
     setTheme(isDarkTheme ? "light" : "dark");
   };
   return (
-    <div>
+    <StyledHeader>
       <StyledH1>profileFinder</StyledH1>
       <RightIcons>
         {!isDarkTheme ? (
@@ -46,7 +57,7 @@ const Header = ({ setTheme, isDarkTheme }) => {
           </>
         )}
       </RightIcons>
-    </div>
+    </StyledHeader>
   );
 };
 

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import "./App.css";
 import Header from "./components/Header";
 import Theme from "./themes/theme";
+import UserPage from "./components/UserPage";
 
 const GlobalStyle = createGlobalStyle`
  * {
@@ -29,6 +30,7 @@ function App() {
     <ThemeProvider theme={isDarkTheme ? Theme.DMColors : Theme.LMColors}>
       <GlobalStyle />
       <Header setTheme={setTheme} isDarkTheme={isDarkTheme} />
+      <UserPage />
     </ThemeProvider>
   );
 }
