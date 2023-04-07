@@ -39,32 +39,30 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## My Process ##
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1) Did a quick google search to find a UI I liked and could build to.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<img src= "src/assets/UIDesign.png" height ="250" alt = "Screenshot of a UI design">
 
-### Code Splitting
+1) Used create React app to build a starter I could build on.  I tidied it up, added theme colors for the light dark mode followed by adding a header to test the light dark mode functionality.
+2) I then added a userPage to handle the fetch requests which in turn rendered the User page where I set up a basic display to check the fetch request was working.
+3) I added a format date function and test to display the date in a readable format.
+4) Next up was to style and layout the user details and bio as per the design.
+5) After that I added and styled the followers/repo component
+6) I added social media icons and display, modifying the svg files so the color reflected the light/dark mode.
+7) Lastly for the User page I added the repository fetch request in the userPage to enable the repos to be displayed on the user page.
+8) Then I added the search component
+9) I then went back to the user.js file to refactor the code and reshuffle it into other files to make it less cluttered and easier to read.
+10) Added some error handling
+11) Finally I wrote the App.test.js :)
+   
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

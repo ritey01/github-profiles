@@ -81,14 +81,13 @@ const UserDetails = ({ user }) => {
         <Details>
           {user.name === null ? (
             <>
-              {/* {alert("No user name found")} */}
               <UserName>{user.login}</UserName>
             </>
           ) : (
             <UserName>{user.name}</UserName>
           )}
           <Login>@{user.login}</Login>
-          <Date>Joined {formatDate(user.created_at)}</Date>
+          {user.date ? <Date>Joined {formatDate(user.created_at)}</Date> : null}
         </Details>
       </StyledUserHeader>
 

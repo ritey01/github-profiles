@@ -16,10 +16,6 @@ body {
   background-color:${(props) => props.theme.background};
 }
 
-/* svg {
-  display: block;
-  max-width: 100%;
-} */
 `;
 
 function App() {

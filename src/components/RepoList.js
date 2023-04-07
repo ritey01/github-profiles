@@ -24,7 +24,9 @@ const RepoList = ({ repos }) => {
       <RepoTitle>Top Repos</RepoTitle>
       <Repo>
         {top4Repos ? (
-          top4Repos.map((repo) => <RepoCard>{repo.name}</RepoCard>)
+          top4Repos.map((repo) => (
+            <RepoCard key={repo.id}>{repo.name}</RepoCard>
+          ))
         ) : (
           <p>No repos available</p>
         )}
