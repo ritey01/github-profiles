@@ -55,7 +55,8 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 8) Then I added the search component
 9) I then went back to the user.js file to refactor the code and reshuffle it into other files to make it less cluttered and easier to read.
 10) Added some error handling
-11) Finally I wrote the App.test.js :)
+11) Wrote some tests :)
+12) Deployed onto Netlify...Da tah!
    
 
 
