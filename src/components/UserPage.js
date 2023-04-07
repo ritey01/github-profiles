@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from "react";
 import User from "./User";
+import Search from "./Search";
 
 const UserPage = () => {
   const [isNotFound, setIsNotFound] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState([]);
   const [repos, setRepos] = useState([]);
-
-  const searchField = "ritey01";
+  const [searchField, setSearchField] = useState("ritey01");
 
   useEffect(() => {
     const fetchUser = async () => {
       const response = await fetch(
         `https://api.github.com/users/${searchField}`
       );
-
+      console.log(response);
       if (response.ok === false) {
         setIsNotFound(true);
         return;
@@ -30,6 +30,9 @@ const UserPage = () => {
       );
       if (response.ok === false) {
         setIsNotFound(true);
+        if (response.status === 403) {
+          console.error("Rate limit exceeded try again later");
+        }
         return;
       }
       const reposData = await response.json();
@@ -40,7 +43,7 @@ const UserPage = () => {
 
     fetchUser();
     fetchRepos();
-  }, []);
+  }, [searchField]);
 
   if (isNotFound) {
     return (
@@ -55,6 +58,7 @@ const UserPage = () => {
   }
   return (
     <>
+      <Search setSearchField={setSearchField} />
       <User user={user} repos={repos} />
     </>
   );

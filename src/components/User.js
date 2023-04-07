@@ -21,6 +21,7 @@ const StyledUserHeader = styled.div`
   display: grid;
   grid-template-columns: 4rem auto;
   margin-top: 0.9rem;
+  grid-gap: 1.2rem;
   @media (min-width: 1440px) {
     grid-template-columns: 15% auto;
   }
@@ -37,6 +38,7 @@ const UserDetails = styled.div`
 const Avatar = styled.img`
   width: 10vh;
   border-radius: 50%;
+
   @media (min-width: 1440px) {
     grid-column-start: 1;
     grid-column-end: 2;
@@ -126,28 +128,20 @@ const Details = styled.p`
   color: ${(props) => props.color || props.theme.text};
 `;
 
-const TopRepos = styled.div`
-  @media (min-width: 768px) {
-    display: grid;
-    grid-template-columns: auto auto;
-  }
-  @media (min-width: 1440px) {
-    margin-left: 6rem;
-  }
-`;
-
 const RepoTitle = styled.h3`
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   font-size: 0.8rem;
   color: ${(props) => props.theme.title};
 `;
 
 const RepoList = styled.ul`
   list-style-type: none;
+  margin-top: 0;
 `;
 const RepoCard = styled.li`
-  color: ${(props) => props.color || props.theme.text};
+  color: ${(props) => props.theme.text};
   font-size: 0.8rem;
+  margin-bottom: 0.8rem;
 `;
 
 const User = ({ user, repos }) => {
@@ -226,18 +220,15 @@ const User = ({ user, repos }) => {
           )}
         </StyledDetails>
       </SocialMedia>
-      <TopRepos>
-        <RepoTitle>Top Repos</RepoTitle>
+      <RepoTitle>Top Repos</RepoTitle>
+
+      <RepoList>
         {top4Repos ? (
-          top4Repos.map((repo) => (
-            <RepoList>
-              <RepoCard>{repo.name}</RepoCard>
-            </RepoList>
-          ))
+          top4Repos.map((repo) => <RepoCard>{repo.name}</RepoCard>)
         ) : (
           <p>No repos available</p>
         )}
-      </TopRepos>
+      </RepoList>
     </Card>
   );
 };
