@@ -1,7 +1,7 @@
 import { useTheme } from "styled-components";
 import React, { useState, useEffect } from "react";
 
-function CompanyIcon({ company }) {
+function OrganisationIcon({ company }) {
   const [color, setColor] = useState();
 
   const theme = useTheme();
@@ -19,4 +19,4 @@ function CompanyIcon({ company }) {
   );
 }
 
-export default CompanyIcon;
+export default OrganisationIcon;
