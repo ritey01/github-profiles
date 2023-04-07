@@ -41,10 +41,6 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 ## My Process ##
 
-1) Did a quick google search to find a UI I liked and could build to.
-
-<img src= "src/assets/UIDesign.png" height ="250" alt = "Screenshot of a UI design">
-
 1) Used create React app to build a starter I could build on.  I tidied it up, added theme colors for the light dark mode followed by adding a header to test the light dark mode functionality.
 2) I then added a userPage to handle the fetch requests which in turn rendered the User page where I set up a basic display to check the fetch request was working.
 3) I added a format date function and test to display the date in a readable format.
