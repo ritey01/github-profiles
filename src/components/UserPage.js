@@ -14,13 +14,13 @@ const UserPage = () => {
       const response = await fetch(
         `https://api.github.com/users/${searchField}`
       );
-      console.log(response);
+
       if (response.ok === false) {
         setIsNotFound(true);
         return;
       }
       const userData = await response.json();
-      console.log(userData);
+
       setUser(userData);
       setIsLoading(false);
     };
@@ -36,7 +36,7 @@ const UserPage = () => {
         return;
       }
       const reposData = await response.json();
-      console.log(reposData);
+
       setRepos(reposData);
       setIsLoading(false);
     };
