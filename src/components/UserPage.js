@@ -67,6 +67,7 @@ const UserPage = () => {
       confirmButtonColor: "rgb(6, 214, 160)",
       confirmButtonAriaLabel: "Ok",
     });
+    setIsNotFound(false);
     return (
       <>
         <Search setSearchField={setSearchField} />

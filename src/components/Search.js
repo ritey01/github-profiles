@@ -27,13 +27,7 @@ const StyledInput = styled.input`
   margin-left: 0.2rem;
   padding: 0.5rem;
   background-color: ${(props) => props.theme.cardBg};
-  ::placeholder,
-  ::-webkit-input-placeholder {
-    color: ${(props) => props.theme.text};
-  }
-  :-ms-input-placeholder {
-    color: ${(props) => props.theme.text};
-  }
+  color: ${(props) => props.theme.text};
 `;
 
 const StyledButton = styled.button`

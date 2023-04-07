@@ -5,11 +5,17 @@ const RepoTitle = styled.h3`
   margin-top: 1.5rem;
   font-size: 0.8rem;
   color: ${(props) => props.theme.title};
+  @media (min-width: 1440px) {
+    margin-left: 6rem;
+  }
 `;
 
 const Repo = styled.ul`
   list-style-type: none;
   margin-top: 0;
+  @media (min-width: 1440px) {
+    margin-left: 6rem;
+  }
 `;
 const RepoCard = styled.li`
   color: ${(props) => props.theme.text};
