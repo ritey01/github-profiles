@@ -40,9 +40,9 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 1) Used create React app to build a starter I could build on.  I tidied it up, added theme colors for the light dark mode followed by adding a header to test the light dark mode functionality.
 2) I then added a userPage to handle the fetch requests which in turn rendered the User page where I set up a basic display to check the fetch request was working.
 3) I added a format date function and test to display the date in a readable format.
-4) Next up was to style and layout the user details and bio as per the design.
+4) Next up was to style and layout the user details and bio.
 5) After that I added and styled the followers/repo component
-6) I added social media icons and display, modifying the svg files so the color reflected the light/dark mode.
+6) I added social media icons and display, modifying the svg files so the color changed with the light/dark mode.
 7) Lastly for the User page I added the repository fetch request in the userPage to enable the repos to be displayed on the user page.
 8) Then I added the search component
 9) I then went back to the user.js file to refactor the code and reshuffle it into other files to make it less cluttered and easier to read.
