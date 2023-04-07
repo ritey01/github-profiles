@@ -48,7 +48,7 @@ const StyledDiv = styled.div`
   align-items: center;
   color: ${(props) => props.theme.text};
 `;
-const Search = ({ setSearchField, SearchField }) => {
+const Search = ({ setSearchField }) => {
   const [name, setName] = useState("");
 
   const handleNameChange = (event) => {
