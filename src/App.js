@@ -19,7 +19,7 @@ body {
 `;
 
 function App() {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
   const isDarkTheme = theme === "dark";
 
   return (

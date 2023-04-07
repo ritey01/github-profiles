@@ -40,6 +40,7 @@ const RightIcons = styled.div`
 const Header = ({ setTheme, isDarkTheme }) => {
   const changeMode = () => {
     setTheme(isDarkTheme ? "light" : "dark");
+    localStorage.setItem("theme", isDarkTheme ? "light" : "dark");
   };
   return (
     <StyledHeader>
