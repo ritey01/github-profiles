@@ -1,6 +1,5 @@
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import React, { useState } from "react";
-import "./App.css";
 import Header from "./components/Header";
 import Theme from "./themes/theme";
 import UserPage from "./components/UserPage";
